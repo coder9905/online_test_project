@@ -1,0 +1,18 @@
+package uz.zako.online_test.service;
+
+import org.springframework.http.ResponseEntity;
+import uz.zako.online_test.entity.Subject;
+import uz.zako.online_test.payload.SubjectPayload;
+
+import java.util.List;
+import java.util.UUID;
+
+public interface SubjectService {
+    Subject saveSubject(SubjectPayload subjectPayload);
+
+    ResponseEntity<?> editSubject(SubjectPayload payload);
+
+    ResponseEntity<?> deleteSubject(UUID uuid);
+
+    List<Subject> getAllSubject();
+}

@@ -1,27 +1,29 @@
 package uz.zako.online_test.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import uz.zako.online_test.entity.abstractentity.AbstractEntity;
 
 import javax.persistence.*;
 import java.util.List;
 
+@Entity(name = "users")
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@Entity(name = "users")
-public class User extends AbstractEntity{
+@JsonIgnoreProperties({"hibernateLazyInitializer"})
+public class User extends AbstractEntity {
 
-//    @Column(unique = true, nullable = false)
+    @Column(unique = true, nullable = false)
     private String username;
 
     private String fullName;
 
-//    @Column(unique = true, nullable = false)
+    @Column(unique = true, nullable = false)
     private String password;
 
-//    @Column(columnDefinition = "false")
     private Boolean isAdmin;
 
     @ManyToMany(fetch = FetchType.LAZY)

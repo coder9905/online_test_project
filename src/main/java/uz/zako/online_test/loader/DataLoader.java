@@ -2,10 +2,12 @@ package uz.zako.online_test.loader;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 import uz.zako.online_test.entity.Admin;
 import uz.zako.online_test.entity.Role;
+import uz.zako.online_test.entity.User;
 import uz.zako.online_test.repository.AdminRepository;
 import uz.zako.online_test.repository.RoleRepository;
 import uz.zako.online_test.repository.UserRepository;
@@ -41,11 +43,25 @@ public class DataLoader implements CommandLineRunner {
         try {
             if (init.equalsIgnoreCase("create")) {
                 Role roleUser=new Role();
+
+//                User user=new User();
+
                 roleUser.setName("ROLE_USER");
                 roleUser.setId(1L);
                 Role roleAdmin = new Role(2L, "ROLE_ADMIN");
                 List<Role> roleList = new ArrayList<>(Arrays.asList(roleUser, roleAdmin));
                 roleRepository.saveAll(roleList);
+
+//                user.setUsername("jahongirergashew2@gmail.com");
+//                user.setPassword(passwordEncoder.encode("user123"));
+//                user.setIsAdmin(false);
+//                user.setFullName("user");
+//                Role role=roleRepository.findByName("ROLE_USER");
+//                System.out.println(role+"==");
+//                user.setRoles(Arrays.asList(role));
+//                user=userRepository.save(user);
+//                System.out.println(user);
+
                 Admin admin = new Admin();
                 admin.setIsAdmin(true);
                 admin.setFullName("admin");

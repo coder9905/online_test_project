@@ -1,4 +1,4 @@
-package uz.zako.oquv_markaz.model;
+package uz.zako.online_test.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
