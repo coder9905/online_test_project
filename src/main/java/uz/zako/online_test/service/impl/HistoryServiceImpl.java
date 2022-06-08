@@ -17,12 +17,9 @@ import uz.zako.online_test.repository.*;
 import uz.zako.online_test.security.SecurityUtils;
 import uz.zako.online_test.service.HistoryService;
 
-import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
-
-import static javafx.scene.input.KeyCode.L;
 
 @Service
 @RequiredArgsConstructor
