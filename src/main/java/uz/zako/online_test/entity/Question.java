@@ -19,6 +19,7 @@ import java.util.UUID;
 @JsonIgnoreProperties({"hibernateLazyInitializer"})
 @Entity
 @Embeddable
+
 public class Question extends AbstractEntity {
 
     @Column(columnDefinition = "TEXT")

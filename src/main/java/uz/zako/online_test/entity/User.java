@@ -4,6 +4,9 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.CreatedBy;
+import org.springframework.data.annotation.LastModifiedBy;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import uz.zako.online_test.entity.abstractentity.AbstractEntity;
 
 import javax.persistence.*;
@@ -14,6 +17,7 @@ import java.util.List;
 @NoArgsConstructor
 @Data
 @JsonIgnoreProperties({"hibernateLazyInitializer"})
+@EntityListeners(AuditingEntityListener.class)
 public class User extends AbstractEntity {
 
     @Column(unique = true, nullable = false)
@@ -31,5 +35,13 @@ public class User extends AbstractEntity {
             joinColumns = @JoinColumn(name = "users_id"),
             inverseJoinColumns = @JoinColumn(name = "roles_id"))
     private List<Role> roles;
+
+    @CreatedBy
+    @ManyToOne
+    private User createdBy;
+
+    @LastModifiedBy
+    @ManyToOne
+    private User updatedBy;
 
 }

@@ -22,6 +22,7 @@ import java.util.List;
 @EqualsAndHashCode
 @Data
 @Entity
+
 public class History extends AbstractEntity {
 
     private Date startDate;

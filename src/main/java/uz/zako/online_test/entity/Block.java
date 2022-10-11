@@ -18,6 +18,7 @@ import java.util.UUID;
 @EqualsAndHashCode
 @Entity
 @Data
+
 public class Block extends AbstractEntity {
 
     private UUID firstBlock;

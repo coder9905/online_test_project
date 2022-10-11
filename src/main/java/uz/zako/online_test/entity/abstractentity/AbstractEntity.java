@@ -7,6 +7,10 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.UpdateTimestamp;
+import org.springframework.data.annotation.CreatedBy;
+import org.springframework.data.annotation.LastModifiedBy;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+import uz.zako.online_test.entity.User;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -19,6 +23,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @MappedSuperclass
 @Data
+//@EntityListeners(AuditingEntityListener.class)
 public class AbstractEntity implements Serializable {
 
     @Id
@@ -31,5 +36,13 @@ public class AbstractEntity implements Serializable {
 
     @UpdateTimestamp
     private Date updatedAt;
+
+//    @CreatedBy
+//    @ManyToOne
+//    private User createdBy;
+//
+//    @LastModifiedBy
+//    @ManyToOne
+//    private User updatedBy;
 
 }
