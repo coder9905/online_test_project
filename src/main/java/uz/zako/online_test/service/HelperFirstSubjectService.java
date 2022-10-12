@@ -12,7 +12,7 @@ public interface HelperFirstSubjectService {
 
     ResponseEntity<?> editHelperSubjectFirst(HelperSubjectFirstPayload payload);
 
-    ResponseEntity<?> deleteHelperFirstSubject(UUID uuid);
+    ResponseEntity<?> deleteHelperFirstSubject(Long uuid);
 
     ResponseEntity<?> getAllHelperFirst();
 }

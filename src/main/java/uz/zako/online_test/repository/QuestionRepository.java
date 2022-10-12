@@ -11,10 +11,10 @@ import java.util.List;
 import java.util.UUID;
 
 @Repository
-public interface QuestionRepository extends JpaRepository<Question, UUID> {
+public interface QuestionRepository extends JpaRepository<Question, Long> {
 
     @Query(nativeQuery = true, value = "select * from Question q WHERE q.subject_id_id=:id ORDER BY random() limit 3")
-    List<Question> findAllByQuestionId(@Param("id") UUID uuid);
+    List<Question> findAllByQuestionId(@Param("id") Long uuid);
 
 
 }

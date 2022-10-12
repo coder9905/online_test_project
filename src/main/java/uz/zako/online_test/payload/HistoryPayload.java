@@ -10,7 +10,6 @@ import uz.zako.online_test.entity.selectAnswer.SelectAnswerSecond;
 import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
 import java.util.Date;
-import java.util.UUID;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -19,13 +18,13 @@ public class HistoryPayload {
 
     private Long resultat;
 
-    private UUID answerId;
+    private Long answerId;
 
-    private UUID helperFirstId;
+    private Long helperFirstId;
 
-    private UUID helperSecondId;
+    private Long helperSecondId;
 
-    private UUID helperThreeId;
+    private Long helperThreeId;
 
     private Double firstBlockBall;
 
@@ -33,7 +32,7 @@ public class HistoryPayload {
 
     private Double threeBlockBall;
 
-    public HistoryPayload(UUID helperFirstId, UUID helperSecondId, UUID helperThreeId) {
+    public HistoryPayload(Long helperFirstId, Long helperSecondId, Long helperThreeId) {
         this.helperFirstId = helperFirstId;
         this.helperSecondId = helperSecondId;
         this.helperThreeId = helperThreeId;

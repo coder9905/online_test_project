@@ -7,24 +7,23 @@ import uz.zako.online_test.entity.History;
 
 import javax.persistence.FetchType;
 import javax.persistence.OneToOne;
-import java.util.UUID;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 public class BlockPayload {
 
-    private UUID id;
+    private Long id;
 
-    private UUID firstBlock;
+    private Long firstBlock;
 
-    private UUID secondBlock;
+    private Long secondBlock;
 
-    private UUID threeBlock;
+    private Long threeBlock;
 
-    private UUID historyId;
+    private Long historyId;
 
-    public BlockPayload(UUID firstBlock, UUID secondBlock, UUID threeBlock, UUID historyId) {
+    public BlockPayload(Long firstBlock, Long secondBlock, Long threeBlock, Long historyId) {
         this.firstBlock = firstBlock;
         this.secondBlock = secondBlock;
         this.threeBlock = threeBlock;

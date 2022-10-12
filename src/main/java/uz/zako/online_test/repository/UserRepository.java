@@ -7,7 +7,7 @@ import uz.zako.online_test.entity.User;
 import java.util.UUID;
 
 @Repository
-public interface UserRepository extends JpaRepository<User, UUID> {
+public interface UserRepository extends JpaRepository<User, Long> {
 
     User findByUsername(String username);
 

@@ -78,7 +78,7 @@ public class HelperSecondSubjectImpl implements HelperSecondSubjectService {
     }
 
     @Override
-    public ResponseEntity<?> deleteHelperSecondSubject(UUID uuid){
+    public ResponseEntity<?> deleteHelperSecondSubject(Long uuid){
 
         try {
             helperSecondSubjectRepository.deleteById(uuid);
@@ -90,7 +90,7 @@ public class HelperSecondSubjectImpl implements HelperSecondSubjectService {
     }
 
     @Override
-    public List<HelperSecondSubject> getHelperSecond(UUID helperFirstId){
+    public List<HelperSecondSubject> getHelperSecond(Long helperFirstId){
 
         List<HelperSecondSubject> helperSecondSubjects=helperSecondSubjectRepository.findAllByHelperFirstSubjectId(helperFirstId);
 

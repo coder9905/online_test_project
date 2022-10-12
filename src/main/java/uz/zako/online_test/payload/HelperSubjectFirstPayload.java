@@ -5,25 +5,24 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
-import java.util.UUID;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 public class HelperSubjectFirstPayload {
 
-    private UUID id;
+    private Long id;
 
-    public HelperSubjectFirstPayload(List<UUID> subjectId) {
+    public HelperSubjectFirstPayload(List<Long> subjectId) {
         this.subjectId = subjectId;
     }
 
-    private UUID subjectOneId;
+    private Long subjectOneId;
 
-    public HelperSubjectFirstPayload(UUID id, UUID subjectOneId) {
+    public HelperSubjectFirstPayload(Long id, Long subjectOneId) {
         this.id = id;
         this.subjectOneId = subjectOneId;
     }
 
-    private List<UUID> subjectId;
+    private List<Long> subjectId;
 }

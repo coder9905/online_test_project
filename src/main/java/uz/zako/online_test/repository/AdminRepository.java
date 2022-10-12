@@ -6,6 +6,10 @@ import uz.zako.online_test.entity.Admin;
 import uz.zako.online_test.entity.Role;
 
 import java.util.UUID;
+
 @Repository
-public interface AdminRepository extends JpaRepository<Admin, UUID> {
+public interface AdminRepository extends JpaRepository<Admin, Long> {
+
+
+
 }

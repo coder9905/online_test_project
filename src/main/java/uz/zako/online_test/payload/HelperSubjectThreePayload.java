@@ -6,34 +6,33 @@ import lombok.NoArgsConstructor;
 import uz.zako.online_test.entity.Subject;
 
 import java.util.List;
-import java.util.UUID;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 public class HelperSubjectThreePayload {
 
-    private UUID id;
+    private Long id;
 
-    private List<UUID> subjectId;
+    private List<Long> subjectId;
 
-    private UUID subjectOneId;
+    private Long subjectOneId;
 
-    private UUID helperSubjectSecondId;
+    private Long helperSubjectSecondId;
 
     private Subject subject;
 
-    public HelperSubjectThreePayload(UUID id, Subject subject) {
+    public HelperSubjectThreePayload(Long id, Subject subject) {
         this.id = id;
         this.subject = subject;
     }
 
-    public HelperSubjectThreePayload(List<UUID> subjectId, UUID helperSubjectSecondId) {
+    public HelperSubjectThreePayload(List<Long> subjectId, Long helperSubjectSecondId) {
         this.subjectId = subjectId;
         this.helperSubjectSecondId = helperSubjectSecondId;
     }
 
-    public HelperSubjectThreePayload(UUID id, UUID subjectOneId, UUID helperSubjectSecondId) {
+    public HelperSubjectThreePayload(Long id, Long subjectOneId, Long helperSubjectSecondId) {
         this.id = id;
         this.subjectOneId = subjectOneId;
         this.helperSubjectSecondId = helperSubjectSecondId;

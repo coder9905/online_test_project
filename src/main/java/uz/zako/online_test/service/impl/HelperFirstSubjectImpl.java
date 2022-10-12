@@ -74,7 +74,7 @@ public class HelperFirstSubjectImpl implements HelperFirstSubjectService {
     }
 
     @Override
-    public ResponseEntity<?> deleteHelperFirstSubject(UUID uuid){
+    public ResponseEntity<?> deleteHelperFirstSubject(Long uuid){
 
         try {
             helperFirstSubjectRepository.deleteById(uuid);

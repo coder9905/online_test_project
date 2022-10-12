@@ -5,13 +5,12 @@ import uz.zako.online_test.entity.User;
 import uz.zako.online_test.payload.AnswerPayload;
 import uz.zako.online_test.payload.HistoryPayload;
 
-import java.util.UUID;
 
 public interface HistoryService {
 
     ResponseEntity<?> saveHistory(HistoryPayload payload);
 
-    void saveHistoryAnswer(UUID questionId, AnswerPayload payload);
+    void saveHistoryAnswer(Long questionId, AnswerPayload payload);
 
     User getByTokenUser();
 

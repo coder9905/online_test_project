@@ -16,8 +16,6 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@JsonIgnoreProperties({"hibernateLazyInitializer"})
-@EntityListeners(AuditingEntityListener.class)
 public class User extends AbstractEntity {
 
     @Column(unique = true, nullable = false)
@@ -36,12 +34,12 @@ public class User extends AbstractEntity {
             inverseJoinColumns = @JoinColumn(name = "roles_id"))
     private List<Role> roles;
 
-    @CreatedBy
-    @ManyToOne
-    private User createdBy;
-
-    @LastModifiedBy
-    @ManyToOne
-    private User updatedBy;
+//    @CreatedBy
+//    @ManyToOne
+//    private User createdBy;
+//
+//    @LastModifiedBy
+//    @ManyToOne
+//    private User updatedBy;
 
 }

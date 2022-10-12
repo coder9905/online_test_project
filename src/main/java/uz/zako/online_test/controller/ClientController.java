@@ -11,7 +11,6 @@ import uz.zako.online_test.payload.*;
 import uz.zako.online_test.service.*;
 
 import java.util.List;
-import java.util.UUID;
 
 @RestController
 @RequiredArgsConstructor
@@ -29,7 +28,7 @@ public class ClientController {
     }
 
     @PostMapping("/save/answer/{id}")
-    public void saveAnswer(@PathVariable("id") UUID id,@RequestBody AnswerPayload payload){
+    public void saveAnswer(@PathVariable("id") Long id,@RequestBody AnswerPayload payload){
         System.out.println(payload);
         historyService.saveHistoryAnswer(id,payload);
     }
@@ -45,12 +44,12 @@ public class ClientController {
     }
 
     @GetMapping("/second/{id}")
-    public List<HelperSecondSubject> getSecond(@PathVariable("id") UUID id){
+    public List<HelperSecondSubject> getSecond(@PathVariable("id") Long id){
         return helperSecondSubjectService.getHelperSecond(id);
     }
 
     @GetMapping("/three/{id}")
-    public List<HelperSubjectThreePayload> getThree(@PathVariable("id") UUID id){
+    public List<HelperSubjectThreePayload> getThree(@PathVariable("id") Long id){
         System.out.println(id);
         return helperThreeSubjectService.getHelperThree(id);
     }

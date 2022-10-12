@@ -7,12 +7,11 @@ import org.springframework.stereotype.Repository;
 import uz.zako.online_test.entity.Block;
 import uz.zako.online_test.entity.History;
 
-import java.util.UUID;
 
 @Repository
-public interface BlockRepository extends JpaRepository<Block, UUID> {
+public interface BlockRepository extends JpaRepository<Block, Long> {
 
     @Query(nativeQuery = true, value = "select * from Block b where b.history_id_id=:id")
-    Block findByHistoryId(@Param("id") UUID uuid);
+    Block findByHistoryId(@Param("id") Long uuid);
 
 }

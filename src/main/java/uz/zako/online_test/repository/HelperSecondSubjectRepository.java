@@ -13,9 +13,9 @@ import java.util.List;
 import java.util.UUID;
 
 @Repository
-public interface HelperSecondSubjectRepository extends JpaRepository<HelperSecondSubject, UUID> {
+public interface HelperSecondSubjectRepository extends JpaRepository<HelperSecondSubject, Long> {
 
 
-    List<HelperSecondSubject> findAllByHelperFirstSubjectId(UUID uuid);
+    List<HelperSecondSubject> findAllByHelperFirstSubjectId(Long uuid);
 
 }

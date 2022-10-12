@@ -6,7 +6,6 @@ import uz.zako.online_test.payload.HelperSubjectFirstPayload;
 import uz.zako.online_test.payload.QuestionPayload;
 
 import java.util.List;
-import java.util.UUID;
 
 public interface QuestionService {
 
@@ -14,9 +13,9 @@ public interface QuestionService {
 
     ResponseEntity<?> editQuestion(QuestionPayload payload);
 
-    ResponseEntity<?> deleteQuestion(UUID uuid);
+    ResponseEntity<?> deleteQuestion(Long uuid);
 
-    List<QuestionPayload> getQuestionBlockFirst(UUID subjectId);
+    List<QuestionPayload> getQuestionBlockFirst(Long subjectId);
 
     ResponseEntity<?> getAllQuestion();
 }

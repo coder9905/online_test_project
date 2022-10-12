@@ -21,7 +21,6 @@ import uz.zako.online_test.service.HelperThreeSubjectService;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
@@ -83,7 +82,7 @@ public class HelperThreeSubjectImpl implements HelperThreeSubjectService {
     }
 
     @Override
-    public ResponseEntity<?> deleteHelperSecondThree(UUID uuid){
+    public ResponseEntity<?> deleteHelperSecondThree(Long uuid){
 
         try {
             helperThreeSubjectRepository.deleteById(uuid);
@@ -95,7 +94,7 @@ public class HelperThreeSubjectImpl implements HelperThreeSubjectService {
     }
 
     @Override
-    public List<HelperSubjectThreePayload> getHelperThree(UUID helperSecondId){
+    public List<HelperSubjectThreePayload> getHelperThree(Long helperSecondId){
 
         try{
             List<HelperSubjectThreePayload> helperThreeSubjects=helperThreeSubjectRepository.findAllByHelperThreeSubject(helperSecondId);

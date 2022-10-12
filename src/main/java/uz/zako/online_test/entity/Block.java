@@ -11,7 +11,6 @@ import javax.persistence.FetchType;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import java.util.List;
-import java.util.UUID;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -21,11 +20,11 @@ import java.util.UUID;
 
 public class Block extends AbstractEntity {
 
-    private UUID firstBlock;
+    private Long firstBlock;
 
-    private UUID secondBlock;
+    private Long secondBlock;
 
-    private UUID threeBlock;
+    private Long threeBlock;
 
     @OneToOne(fetch = FetchType.LAZY)
     private History historyId;

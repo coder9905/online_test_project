@@ -6,7 +6,7 @@ import uz.zako.online_test.entity.Subject;
 
 import java.util.UUID;
 @Repository
-public interface SubjectRepository extends JpaRepository<Subject, UUID> {
+public interface SubjectRepository extends JpaRepository<Subject, Long> {
 
 
 }

@@ -6,7 +6,6 @@ import uz.zako.online_test.payload.HelperSubjectSecondPayload;
 import uz.zako.online_test.payload.HelperSubjectThreePayload;
 
 import java.util.List;
-import java.util.UUID;
 
 public interface HelperThreeSubjectService {
 
@@ -15,9 +14,9 @@ public interface HelperThreeSubjectService {
 
     ResponseEntity<?> editHelperSubjectThree(HelperSubjectThreePayload payload);
 
-    ResponseEntity<?> deleteHelperSecondThree(UUID uuid);
+    ResponseEntity<?> deleteHelperSecondThree(Long uuid);
 
-    List<HelperSubjectThreePayload> getHelperThree(UUID helperSecondId);
+    List<HelperSubjectThreePayload> getHelperThree(Long helperSecondId);
 
     ResponseEntity<?> getAllHelperThree();
 }

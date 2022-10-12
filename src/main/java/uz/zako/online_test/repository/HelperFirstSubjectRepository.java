@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.UUID;
 
 @Repository
-public interface HelperFirstSubjectRepository extends JpaRepository<HelperFirstSubject, UUID> {
+public interface HelperFirstSubjectRepository extends JpaRepository<HelperFirstSubject, Long> {
 
 
 

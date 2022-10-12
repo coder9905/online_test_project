@@ -20,7 +20,7 @@ import uz.zako.online_test.service.QuestionService;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
+import java.lang.Long;
 
 @Service
 @Slf4j
@@ -75,7 +75,7 @@ public class QuestionServiceImpl implements QuestionService {
     }
 
     @Override
-    public ResponseEntity<?> deleteQuestion(UUID uuid){
+    public ResponseEntity<?> deleteQuestion(Long uuid){
         try{
             questionRepository.deleteById(uuid);
             return ResponseEntity.ok(new Result(true, "question delete succesfull", null));
@@ -86,7 +86,7 @@ public class QuestionServiceImpl implements QuestionService {
     }
 
     @Override
-    public List<QuestionPayload> getQuestionBlockFirst(UUID subjectId){
+    public List<QuestionPayload> getQuestionBlockFirst(Long subjectId){
 
         try{
             List<Question> uuidList=questionRepository.findAllByQuestionId(subjectId);

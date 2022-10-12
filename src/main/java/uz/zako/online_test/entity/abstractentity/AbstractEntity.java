@@ -27,9 +27,10 @@ import java.util.UUID;
 public class AbstractEntity implements Serializable {
 
     @Id
-    @GeneratedValue(generator = "uuid2")
-    @GenericGenerator(strategy = "uuid",name = "uuid")
-    private UUID id;
+//    @GeneratedValue(generator = "uuid2")
+//    @GenericGenerator(strategy = "uuid",name = "uuid")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @CreationTimestamp
     private Date createdAt;

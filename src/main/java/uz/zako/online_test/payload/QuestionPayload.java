@@ -6,22 +6,21 @@ import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 public class QuestionPayload {
 
-    private UUID id;
+    private Long id;
 
     private String body;
 
     private Long degree;
 
-    private UUID subjectId;
+    private Long subjectId;
 
-    public QuestionPayload(String body, Long degree, UUID subjectId) {
+    public QuestionPayload(String body, Long degree, Long subjectId) {
         this.body = body;
         this.degree = degree;
         this.subjectId = subjectId;
@@ -29,7 +28,7 @@ public class QuestionPayload {
 
     List<AnswerPayload> answerPayloadList=new ArrayList<>();
 
-    public QuestionPayload(UUID id, String body, Long degree) {
+    public QuestionPayload(Long id, String body, Long degree) {
         this.id = id;
         this.body = body;
         this.degree = degree;

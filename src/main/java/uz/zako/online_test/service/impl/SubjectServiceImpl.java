@@ -13,7 +13,6 @@ import uz.zako.online_test.repository.SubjectRepository;
 import uz.zako.online_test.service.SubjectService;
 
 import java.util.List;
-import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
@@ -56,7 +55,7 @@ public class SubjectServiceImpl implements SubjectService {
     }
 
     @Override
-    public ResponseEntity<?> deleteSubject(UUID uuid){
+    public ResponseEntity<?> deleteSubject(Long uuid){
         try {
             subjectRepository.deleteById(uuid);
             return ResponseEntity.ok(new Result(true,"delete succesfull",null));

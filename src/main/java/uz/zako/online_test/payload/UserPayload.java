@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.UUID;
 
 
 @AllArgsConstructor
@@ -12,7 +11,7 @@ import java.util.UUID;
 @Data
 public class UserPayload {
 
-    private UUID id;
+    private Long id;
 
     private String username;
 

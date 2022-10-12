@@ -7,15 +7,14 @@ import org.springframework.stereotype.Repository;
 import uz.zako.online_test.entity.History;
 import uz.zako.online_test.payload.HistoryPayload;
 
-import java.util.UUID;
 
 @Repository
-public interface HistoryRepository extends JpaRepository<History, UUID> {
+public interface HistoryRepository extends JpaRepository<History, Long> {
 
     @Query(nativeQuery = true, value = "select * from History h where h.user_id=:id ORDER BY h.created_at desc limit 1")
-    History findByUserId(@Param("id") UUID uuid);
+    History findByUserId(@Param("id") Long uuid);
 
     @Query(" select new uz.zako.online_test.payload.HistoryPayload(h.firstBlockBall, h.secondBlockBall, h.threeBlockBall) from History h where h.id=:id")
-    HistoryPayload getHistoryId(@Param("id") UUID id);
+    HistoryPayload getHistoryId(@Param("id") Long id);
 
 }

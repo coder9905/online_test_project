@@ -11,7 +11,7 @@ import uz.zako.online_test.entity.selectAnswer.SelectAnswerThree;
 import java.util.UUID;
 
 @Repository
-public interface SelectAnswerThreeRepository extends JpaRepository<SelectAnswerThree, UUID> {
+public interface SelectAnswerThreeRepository extends JpaRepository<SelectAnswerThree, Long> {
 //    @Query(nativeQuery = true, value = "select * from SelectAnswerThree s where s.history_id=:id")
-    SelectAnswerThree findByHistoryId(UUID id);
+    SelectAnswerThree findByHistoryId(Long id);
 }

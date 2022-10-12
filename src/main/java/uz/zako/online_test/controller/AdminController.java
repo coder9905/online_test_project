@@ -10,7 +10,6 @@ import uz.zako.online_test.payload.*;
 import uz.zako.online_test.service.*;
 
 import java.util.List;
-import java.util.UUID;
 
 @RestController
 @RequiredArgsConstructor
@@ -40,7 +39,7 @@ public class AdminController {
     }
 
     @DeleteMapping("/deleteSubject/{id}")
-    public ResponseEntity<?> deleteSubject(@PathVariable("id") UUID uuid){
+    public ResponseEntity<?> deleteSubject(@PathVariable("id") Long uuid){
         return subjectService.deleteSubject(uuid);
     }
 
@@ -62,7 +61,7 @@ public class AdminController {
     }
 
     @DeleteMapping("/deletehelperFirst/{id}")
-    public ResponseEntity<?> deleteHelperFirst(@PathVariable("id") UUID uuid){
+    public ResponseEntity<?> deleteHelperFirst(@PathVariable("id") Long uuid){
         return helperFirstSubjectService.deleteHelperFirstSubject(uuid);
     }
 
@@ -84,7 +83,7 @@ public class AdminController {
     }
 
     @DeleteMapping("/deletehelperSecond/{id}")
-    public ResponseEntity<?> deleteHelperSecond(@PathVariable("id") UUID uuid){
+    public ResponseEntity<?> deleteHelperSecond(@PathVariable("id") Long uuid){
         return helperSecondSubjectService.deleteHelperSecondSubject(uuid);
     }
 
@@ -104,7 +103,7 @@ public class AdminController {
     }
 
     @DeleteMapping("/deletehelperThree/{id}")
-    public ResponseEntity<?> deleteHelperThree(@PathVariable("id") UUID uuid){
+    public ResponseEntity<?> deleteHelperThree(@PathVariable("id") Long uuid){
         return helperThreeSubjectService.deleteHelperSecondThree(uuid);
     }
 
@@ -124,7 +123,7 @@ public class AdminController {
     }
 
     @DeleteMapping("/delete/question/{id}")
-    public ResponseEntity<?> deleteQuestion(@PathVariable("id") UUID uuid){
+    public ResponseEntity<?> deleteQuestion(@PathVariable("id") Long uuid){
         return questionService.deleteQuestion(uuid);
     }
 
@@ -145,12 +144,12 @@ public class AdminController {
     }
 
 //    @GetMapping("/block/question/{id}")
-//    public List<QuestionPayload> getQuestionBlock(@PathVariable("id") UUID id){
+//    public List<QuestionPayload> getQuestionBlock(@PathVariable("id") Long id){
 //        return questionService.getQuestionBlockFirst(id);
 //    }
 
     @GetMapping("/chiqarish/{id}")
-    public List<QuestionPayload> getQuestion(@PathVariable("id") UUID id){
+    public List<QuestionPayload> getQuestion(@PathVariable("id") Long id){
         return questionService.getQuestionBlockFirst(id);
     }
 

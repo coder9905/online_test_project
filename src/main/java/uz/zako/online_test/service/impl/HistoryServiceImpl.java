@@ -19,7 +19,6 @@ import uz.zako.online_test.service.HistoryService;
 
 import java.util.Date;
 import java.util.List;
-import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
@@ -94,7 +93,7 @@ public class HistoryServiceImpl implements HistoryService {
     }
 
     @Override
-    public void saveHistoryAnswer(UUID questionId, AnswerPayload payload) {
+    public void saveHistoryAnswer(Long questionId, AnswerPayload payload) {
 
         int count = 0;
 

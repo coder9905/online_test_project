@@ -1,5 +1,6 @@
 package uz.zako.online_test.loader;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -17,6 +18,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @Component
+@Slf4j
 public class DataLoader implements CommandLineRunner {
 
     private final RoleRepository roleRepository;
@@ -48,17 +50,7 @@ public class DataLoader implements CommandLineRunner {
                 roleUser.setId(1L);
                 Role roleAdmin = new Role(2L, "ROLE_ADMIN");
                 List<Role> roleList = new ArrayList<>(Arrays.asList(roleUser, roleAdmin));
-                roleRepository.saveAll(roleList);
-
-//                user.setUsername("jahongirergashew2@gmail.com");
-//                user.setPassword(passwordEncoder.encode("user123"));
-//                user.setIsAdmin(false);
-//                user.setFullName("user");
-//                Role role=roleRepository.findByName("ROLE_USER");
-//                System.out.println(role+"==");
-//                user.setRoles(Arrays.asList(role));
-//                user=userRepository.save(user);
-//                System.out.println(user);
+                roleList=roleRepository.saveAll(roleList);
 
                 Admin admin = new Admin();
                 admin.setIsAdmin(true);
@@ -67,11 +59,13 @@ public class DataLoader implements CommandLineRunner {
                 admin.setPassword(passwordEncoder.encode("admin123"));
                 admin.setSocial("t.me/test");
                 admin.setRoles(roleList);
+
                 adminRepository.save(admin);
 
             }
         } catch (Exception e) {
-            System.out.println(e.getLocalizedMessage());
+            log.error("hatolik");
+            System.out.println(e.getMessage());
         }
 
     }
