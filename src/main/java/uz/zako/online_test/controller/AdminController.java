@@ -1,12 +1,16 @@
 package uz.zako.online_test.controller;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import uz.zako.online_test.entity.Question;
 import uz.zako.online_test.entity.Subject;
+import uz.zako.online_test.entity.User;
 import uz.zako.online_test.entity.helper.HelperFirstSubject;
+import uz.zako.online_test.model.Result;
 import uz.zako.online_test.payload.*;
+import uz.zako.online_test.repository.UserRepository;
 import uz.zako.online_test.service.*;
 
 import java.util.List;
@@ -22,6 +26,20 @@ public class AdminController {
     private final HelperThreeSubjectService helperThreeSubjectService;
     private final QuestionService questionService;
     private final AnswerService answerService;
+    private final UserRepository userRepository;
+
+    @GetMapping("/all/users")
+    public ResponseEntity<?> getAllUsers(){
+        try {
+            List<User> users=userRepository.findAll();
+            if (users != null){
+                return ResponseEntity.ok(users);
+            }
+            return new ResponseEntity(new Result(false,"error get All Users",null), HttpStatus.BAD_REQUEST);
+        }catch (Exception e){
+            return new ResponseEntity(new Result(false,"error get All Users",null), HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
 
     @GetMapping("/all")
     public List<Subject> getAllSubject(){
