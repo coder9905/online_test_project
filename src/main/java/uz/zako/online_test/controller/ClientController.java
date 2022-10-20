@@ -15,6 +15,8 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/client")
+@CrossOrigin("*")
+
 public class ClientController {
 
     private final HistoryService historyService;

@@ -28,6 +28,8 @@ import java.util.Random;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/auth")
+@CrossOrigin("*")
+
 public class AuthController {
 
     private final UserRepository userRepository;

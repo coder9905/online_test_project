@@ -9,6 +9,8 @@ import uz.zako.online_test.service.AttachmentService;
 @RestController
 @RequestMapping("/api/file")
 @RequiredArgsConstructor
+@CrossOrigin("*")
+
 public class AttachmentController {
 
     private final AttachmentService attachmentService;
