@@ -31,6 +31,9 @@ public class Question extends AbstractEntity {
 //    @JsonManagedReference
     private Subject subjectId;
 
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE, mappedBy = "questionId")
+    private List<Answer> answersId;
+
 
 
 }
