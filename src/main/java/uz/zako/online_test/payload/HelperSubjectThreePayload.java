@@ -27,6 +27,11 @@ public class HelperSubjectThreePayload {
         this.subject = subject;
     }
 
+    public HelperSubjectThreePayload(Long id, Long subjectOneId) {
+        this.id = id;
+        this.subjectOneId = subjectOneId;
+    }
+
     public HelperSubjectThreePayload(List<Long> subjectId, Long helperSubjectSecondId) {
         this.subjectId = subjectId;
         this.helperSubjectSecondId = helperSubjectSecondId;

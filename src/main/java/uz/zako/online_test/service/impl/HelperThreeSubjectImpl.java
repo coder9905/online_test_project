@@ -6,17 +6,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import uz.zako.online_test.entity.Subject;
-import uz.zako.online_test.entity.helper.HelperSecondSubject;
 import uz.zako.online_test.entity.helper.HelperThreeSubject;
 import uz.zako.online_test.exception.ResourceNotFoundException;
 import uz.zako.online_test.model.Result;
-import uz.zako.online_test.payload.HelperSubjectSecondPayload;
 import uz.zako.online_test.payload.HelperSubjectThreePayload;
-import uz.zako.online_test.repository.HelperFirstSubjectRepository;
 import uz.zako.online_test.repository.HelperSecondSubjectRepository;
 import uz.zako.online_test.repository.HelperThreeSubjectRepository;
 import uz.zako.online_test.repository.SubjectRepository;
-import uz.zako.online_test.service.HelperSecondSubjectService;
 import uz.zako.online_test.service.HelperThreeSubjectService;
 
 import java.util.ArrayList;
@@ -94,10 +90,10 @@ public class HelperThreeSubjectImpl implements HelperThreeSubjectService {
     }
 
     @Override
-    public List<HelperSubjectThreePayload> getHelperThree(Long helperSecondId){
+    public List<HelperThreeSubject> getHelperThree(Long helperSecondId, Long firstId){
 
         try{
-            List<HelperSubjectThreePayload> helperThreeSubjects=helperThreeSubjectRepository.findAllByHelperThreeSubject(helperSecondId);
+            List<HelperThreeSubject> helperThreeSubjects=helperThreeSubjectRepository.findAllByHelperThreeSubject(helperSecondId, firstId);
             if (helperThreeSubjects.size()>0 && helperThreeSubjects != null){
                 return helperThreeSubjects;
             }

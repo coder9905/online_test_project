@@ -16,7 +16,6 @@ import java.util.List;
 @RequiredArgsConstructor
 @RequestMapping("/api/client")
 @CrossOrigin("*")
-
 public class ClientController {
 
     private final HistoryService historyService;
@@ -50,9 +49,9 @@ public class ClientController {
         return helperSecondSubjectService.getHelperSecond(id);
     }
 
-    @GetMapping("/three/{id}")
-    public List<HelperSubjectThreePayload> getThree(@PathVariable("id") Long id){
+    @GetMapping("/three/{secondId}")
+    public List<HelperThreeSubject> getThree(@PathVariable("secondId") Long id, @RequestParam(defaultValue = "0") Long firstId){
         System.out.println(id);
-        return helperThreeSubjectService.getHelperThree(id);
+        return helperThreeSubjectService.getHelperThree(id,firstId);
     }
 }
