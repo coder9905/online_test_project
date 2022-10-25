@@ -1,5 +1,6 @@
 package uz.zako.online_test.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
@@ -32,6 +33,7 @@ public class Question extends AbstractEntity {
     private Subject subjectId;
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE, mappedBy = "questionId")
+    @JsonIgnore
     private List<Answer> answersId;
 
 
