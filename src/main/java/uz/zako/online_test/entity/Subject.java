@@ -26,12 +26,4 @@ public class Subject extends AbstractEntity {
     @Column(name = "subject",unique = true)
     private String name;
 
-    @CreatedBy
-    @ManyToOne
-    private User createdBy;
-
-    @LastModifiedBy
-    @ManyToOne
-    private User updatedBy;
-
 }

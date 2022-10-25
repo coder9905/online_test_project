@@ -38,12 +38,4 @@ public class AbstractEntity implements Serializable {
     @UpdateTimestamp
     private Date updatedAt;
 
-//    @CreatedBy
-//    @ManyToOne
-//    private User createdBy;
-//
-//    @LastModifiedBy
-//    @ManyToOne
-//    private User updatedBy;
-
 }

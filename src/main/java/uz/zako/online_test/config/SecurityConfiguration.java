@@ -51,5 +51,4 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .apply(new JwtConfigurer(jwtTokenProvider))
         ;
     }
-
 }

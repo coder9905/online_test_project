@@ -20,6 +20,8 @@ public class QuestionPayload {
 
     private Long subjectId;
 
+
+
     public QuestionPayload(String body, Long degree, Long subjectId) {
         this.body = body;
         this.degree = degree;

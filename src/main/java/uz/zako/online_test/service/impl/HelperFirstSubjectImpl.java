@@ -42,7 +42,7 @@ public class HelperFirstSubjectImpl implements HelperFirstSubjectService {
             }
 
             if (subject != null && subject.size() != 0) {
-                return ResponseEntity.ok(new Result(true, "save succesfull", subject));
+                return ResponseEntity.ok(new Result(true, "save helperfirstSubject", subject));
             }
             return ResponseEntity.ok(new Result(false,"save not helperfirstSubject",null));
         }catch (Exception e){

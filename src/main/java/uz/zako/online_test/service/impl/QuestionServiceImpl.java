@@ -42,6 +42,9 @@ public class QuestionServiceImpl implements QuestionService {
 
             question.setBody(payload.getBody());
             question.setDegree(payload.getDegree());
+
+
+
             question.setSubjectId(subjectRepository.findById(payload.getSubjectId()).orElseThrow(() -> new ResourceNotFoundException("subject not found")));
 
             question = questionRepository.save(question);
