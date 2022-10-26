@@ -15,7 +15,7 @@ public interface QuestionService {
 
     ResponseEntity<?> deleteQuestion(Long uuid);
 
-    List<QuestionPayload> getQuestionBlockFirst(Long subjectId);
+    List<QuestionPayload> getQuestionBlockFirst(Long userId, QuestionPayload payload);
 
     ResponseEntity<?> getAllQuestion();
 }

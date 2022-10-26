@@ -20,7 +20,17 @@ public class QuestionPayload {
 
     private Long subjectId;
 
+    private Long subjectFirstId;
+    private Long subjectSecondId;
+    private Long subjectThreeId;
 
+    public QuestionPayload(Long subjectFirstId, Long subjectSecondId, Long subjectThreeId) {
+        this.subjectFirstId = subjectFirstId;
+        this.subjectSecondId = subjectSecondId;
+        this.subjectThreeId = subjectThreeId;
+    }
+
+    private List<AnswerPayload> answerPayloadList;
 
     public QuestionPayload(String body, Long degree, Long subjectId) {
         this.body = body;
@@ -28,7 +38,12 @@ public class QuestionPayload {
         this.subjectId = subjectId;
     }
 
-    List<AnswerPayload> answerPayloadList=new ArrayList<>();
+    public QuestionPayload(String body, Long degree, Long subjectId, List<AnswerPayload> answerPayloadList) {
+        this.body = body;
+        this.degree = degree;
+        this.subjectId = subjectId;
+        this.answerPayloadList = answerPayloadList;
+    }
 
     public QuestionPayload(Long id, String body, Long degree) {
         this.id = id;

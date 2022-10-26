@@ -18,7 +18,7 @@ import java.util.List;
 @Data
 public class User extends AbstractEntity {
 
-    @Column(unique = true, nullable = false)
+//    @Column(unique = true, nullable = false)
     private String username;
 
     private String fullName;

@@ -36,6 +36,10 @@ public class Question extends AbstractEntity {
     @JsonIgnore
     private List<Answer> answersId;
 
+    @ManyToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @JsonIgnore
+    private List<User> user;
+
 
 
 }

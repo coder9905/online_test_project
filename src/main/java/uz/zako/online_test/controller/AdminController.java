@@ -168,9 +168,9 @@ public class AdminController {
 //        return questionService.getQuestionBlockFirst(id);
 //    }
 
-    @GetMapping("/chiqarish/{id}")
-    public List<QuestionPayload> getQuestion(@PathVariable("id") Long id){
-        return questionService.getQuestionBlockFirst(id);
+    @GetMapping("/getBlockFirst/{userId}")
+    public List<QuestionPayload> getQuestion(@PathVariable("firstSubjectId") Long userId, @RequestBody QuestionPayload payload){
+        return questionService.getQuestionBlockFirst(userId,payload);
     }
 
 }

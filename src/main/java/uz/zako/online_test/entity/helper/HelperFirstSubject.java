@@ -1,5 +1,6 @@
 package uz.zako.online_test.entity.helper;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,6 +21,7 @@ import javax.persistence.ManyToOne;
 public class HelperFirstSubject extends AbstractEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
+//    @JsonIgnore
     private Subject subject;
 
 }

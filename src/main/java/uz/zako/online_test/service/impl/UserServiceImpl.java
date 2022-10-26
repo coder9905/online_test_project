@@ -33,6 +33,9 @@ public class UserServiceImpl implements UserService {
     public ResponseEntity<?> saveUser(@RequestBody UserPayload payload){
         try {
             User user = new User();
+
+            user=userRepository.findByUsername(payload.getUsername());
+
             user.setUsername(payload.getUsername());
             user.setFullName(payload.getFullName());
             user.setPassword(bCryptPasswordEncoder.encode(payload.getPassword()));
