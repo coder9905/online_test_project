@@ -23,12 +23,10 @@ import java.util.UUID;
 @NoArgsConstructor
 @MappedSuperclass
 @Data
-//@EntityListeners(AuditingEntityListener.class)
+@EntityListeners(AuditingEntityListener.class)
 public class AbstractEntity implements Serializable {
 
     @Id
-//    @GeneratedValue(generator = "uuid2")
-//    @GenericGenerator(strategy = "uuid",name = "uuid")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 

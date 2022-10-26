@@ -1,11 +1,11 @@
 package uz.zako.online_test.entity;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.google.common.base.MoreObjects;
+import lombok.*;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
@@ -16,14 +16,20 @@ import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
+@ToString
+@Getter
+@Setter
 @Entity
-@EqualsAndHashCode
-@JsonIgnoreProperties({"hibernateLazyInitializer"})
-@EntityListeners(AuditingEntityListener.class)
 public class Subject extends AbstractEntity {
 
     @Column(name = "subject",unique = true)
     private String name;
+
+    @ToString.Exclude
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+    @JsonIgnore
+    private List<Question> questions;
+
 
 }
